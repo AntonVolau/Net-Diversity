@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Net Diversity Library\Net Diversity Library.csproj" />
+    <ProjectReference Include="..\MultyLib\MultyLib.csproj" />
   </ItemGroup>
 
 </Project>

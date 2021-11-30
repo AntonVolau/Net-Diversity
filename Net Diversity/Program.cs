@@ -1,4 +1,4 @@
-﻿using Net_Diversity_Library;
+﻿using MultyLib;
 using System;
 
 namespace Net_Diversity

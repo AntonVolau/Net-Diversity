@@ -1,4 +1,4 @@
-﻿using Net_Diversity_Library_Framework;
+﻿using MultyLib;
 using System.Windows;
 
 namespace NET_Diversity_WPF_Framework

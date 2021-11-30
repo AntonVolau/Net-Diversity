@@ -95,9 +95,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Net Diversity Library Framework\Net Diversity Library Framework.csproj">
-      <Project>{6A3AF026-22B8-4E58-9EB8-8CACF01DC761}</Project>
-      <Name>Net Diversity Library Framework</Name>
+    <ProjectReference Include="..\MultyLib\MultyLib.csproj">
+      <Project>{ccfd78a0-0deb-4610-8899-840450115972}</Project>
+      <Name>MultyLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
