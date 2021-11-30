@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net Diversity", "Net Diversity\Net Diversity.csproj", "{70662DEB-104D-4CEE-8168-E18B24F7B571}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net Diversity", "Net Diversity\Net Diversity.csproj", "{70662DEB-104D-4CEE-8168-E18B24F7B571}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net Diversity Library", "Net Diversity Library\Net Diversity Library.csproj", "{78E38639-7C57-4767-821A-3FB2CD9E59DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net Diversity Library", "Net Diversity Library\Net Diversity Library.csproj", "{78E38639-7C57-4767-821A-3FB2CD9E59DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net Diversity WPF", "Net Diversity WPF\Net Diversity WPF.csproj", "{C83F73B4-DFB9-4620-82BB-C8DB2F0CCD6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net Diversity WPF", "Net Diversity WPF\Net Diversity WPF.csproj", "{C83F73B4-DFB9-4620-82BB-C8DB2F0CCD6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET Diversity WPF Framework", "NET Diversity WPF Framework\NET Diversity WPF Framework.csproj", "{30099D75-C398-4EB8-911E-EA2B7DD11F95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net Diversity Library Framework", "Net Diversity Library Framework\Net Diversity Library Framework.csproj", "{6A3AF026-22B8-4E58-9EB8-8CACF01DC761}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{C83F73B4-DFB9-4620-82BB-C8DB2F0CCD6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C83F73B4-DFB9-4620-82BB-C8DB2F0CCD6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C83F73B4-DFB9-4620-82BB-C8DB2F0CCD6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30099D75-C398-4EB8-911E-EA2B7DD11F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30099D75-C398-4EB8-911E-EA2B7DD11F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30099D75-C398-4EB8-911E-EA2B7DD11F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30099D75-C398-4EB8-911E-EA2B7DD11F95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A3AF026-22B8-4E58-9EB8-8CACF01DC761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A3AF026-22B8-4E58-9EB8-8CACF01DC761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A3AF026-22B8-4E58-9EB8-8CACF01DC761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A3AF026-22B8-4E58-9EB8-8CACF01DC761}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
