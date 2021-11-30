@@ -9,8 +9,10 @@
     <Grid>
         <Button x:Name="Button1" Content="Click me (1 task)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="208" Margin="47,214,0,0" Height="62" Click="Button1_Click"/>
         <Button x:Name="Button2" Content="Click me (2 task)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="228" Margin="509,214,0,0" Height="62" Click="Button2_Click"/>
-        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="68" TextWrapping="Wrap" Text="Please type your name here" VerticalAlignment="Top" Width="208" Margin="47,76,0,0"/>
-        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Height="68" TextWrapping="Wrap" Text="Please type your name here" VerticalAlignment="Top" Width="208" Margin="509,76,0,0"/>
+        <TextBox x:Name="TextBox1" LostFocus="TextBox1_LostFocus" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="208" Margin="47,76,0,0"/>
+        <TextBox x:Name="TextBox3" GotFocus="TextBox3_GotFocus" Text="Please, enter your name..." HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="208" Margin="47,76,0,0"/>
+        <TextBox x:Name="TextBox2" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="208" Margin="509,76,0,0"/>
+        <TextBox x:Name="TextBox4" GotFocus="TextBox4_GotFocus" Text="Please, enter your name..." HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="208" Margin="509,76,0,0"/>
         <Label x:Name="Label1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,322,0,0" Height="63" Width="333"/>
         <Label x:Name="Label2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="406,322,0,0" Height="63" Width="331"/>
 
