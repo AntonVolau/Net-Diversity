@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net Diversity WPF", "Net Di
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET Diversity WPF Framework", "NET Diversity WPF Framework\NET Diversity WPF Framework.csproj", "{30099D75-C398-4EB8-911E-EA2B7DD11F95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultyLib", "MultyLib\MultyLib.csproj", "{CCFD78A0-0DEB-4610-8899-840450115972}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultyLib", "MultyLib\MultyLib.csproj", "{CCFD78A0-0DEB-4610-8899-840450115972}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1", "..\..\Proska\Task1\Task1.csproj", "{EC0BEBD3-53AA-41FA-AC98-3991B5258C01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1.Tests", "..\..\Proska\Task1.Tests\Task1.Tests.csproj", "{37BD3AE6-9CA4-4A61-946B-9362A0470AE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{CCFD78A0-0DEB-4610-8899-840450115972}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCFD78A0-0DEB-4610-8899-840450115972}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCFD78A0-0DEB-4610-8899-840450115972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC0BEBD3-53AA-41FA-AC98-3991B5258C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC0BEBD3-53AA-41FA-AC98-3991B5258C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC0BEBD3-53AA-41FA-AC98-3991B5258C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC0BEBD3-53AA-41FA-AC98-3991B5258C01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37BD3AE6-9CA4-4A61-946B-9362A0470AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37BD3AE6-9CA4-4A61-946B-9362A0470AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37BD3AE6-9CA4-4A61-946B-9362A0470AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37BD3AE6-9CA4-4A61-946B-9362A0470AE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
