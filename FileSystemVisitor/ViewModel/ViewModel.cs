@@ -76,6 +76,38 @@ namespace FileSystemVisitor.ViewModel
             WorkerSupportsCancellation = true
         };
 
+        internal static string GetCreatedOn(string path)
+        {
+            try
+            {
+                if (FileSystem.DirectoryExists(path))
+                {
+                    return $"{FileSystem.GetDirectoryInfo(path).CreationTime.ToShortDateString()} {FileSystem.GetDirectoryInfo(path).CreationTime.ToShortTimeString()}";
+                }
+                return $"{FileSystem.GetFileInfo(path).CreationTime.ToShortDateString()} {FileSystem.GetFileInfo(path).CreationTime.ToShortTimeString()}";
+            }
+            catch
+            {
+                return string.Empty;
+            }
+        }
+
+        internal static string GetModifiedOn(string path)
+        {
+            try
+            {
+                if (FileSystem.DirectoryExists(path))
+                {
+                    return $"{FileSystem.GetDirectoryInfo(path).LastWriteTime.ToShortDateString()} {FileSystem.GetDirectoryInfo(path).LastWriteTime.ToShortTimeString()}";
+                }
+                return $"{FileSystem.GetFileInfo(path).LastWriteTime.ToShortDateString()} {FileSystem.GetFileInfo(path).LastWriteTime.ToShortTimeString()}";
+            }
+            catch
+            {
+                return string.Empty;
+            }
+        }
+
         internal bool IsFileHidden(string fileName)
         {
             var attr = FileAttributes.Normal;
@@ -262,6 +294,7 @@ namespace FileSystemVisitor.ViewModel
             file.IsDirectory = IsDirectory(fileName);
             file.IsImage = ImageExtensions.Contains(file.FileExtension.ToLower());
             file.IsVideo = VideoExtensions.Contains(file.FileExtension.ToLower());
+            file.ModifiedOn = GetModifiedOn(file.Path);
 
             NavigatedFolderFiles.Add(file);
             OnPropertyChanged(nameof(NavigatedFolderFiles));

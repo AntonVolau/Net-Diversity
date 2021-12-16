@@ -14,7 +14,7 @@ namespace FileSystemVisitor.Models
         public string FileExtension { get; set; }
         public string Size { get; set; }
         public string CreatedOn { get; set; }
-        public string DateModified { get; set; }
+        public string ModifiedOn { get; set; }
         public string AccesedOn { get; set; }
         public bool IsDirectory { get; set; }
         public bool IsReadOnly { get; set; }
@@ -24,6 +24,7 @@ namespace FileSystemVisitor.Models
         public bool IsSelected { get; set; }
         public bool IsPinned { get; set; }
         internal string _Type { get; set; }
+        public string DisplayedName => string.Concat(Name, "        " , Type, "        ", ModifiedOn);
         public string Type =>_Type = IsDirectory ? "Folder" : "File";
     }
 }

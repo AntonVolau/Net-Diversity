@@ -3,22 +3,59 @@
     <Style
         x:Key="ListViewItems"
         TargetType="{x:Type ListViewItem}">
-        <Setter Property="Content" Value="{Binding Name}"/>
-        <!--<Setter Property="Template">
+        <Setter Property="Content" Value="{Binding DisplayedName}"/>
+        <Setter Property="ToolTip">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ListViewItem}">
-                    <Grid Background="Transparent">
-                        <Border BorderThickness="1">
-                        </Border>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <DataTrigger
-                            Binding="{Binding IsHidden, UpdateSourceTrigger=PropertyChanged}" Value="True">
-                            <Setter Property="Visibility" Value="Visible" />
-                        </DataTrigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
+                <TextBlock>
+                    <Run Text="{Binding Type, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Run Text="Created on:}"/>
+                    <Run Text="{Binding CreatedOn, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <LineBreak/>
+                </TextBlock>
             </Setter.Value>
-        </Setter>-->
+        </Setter>
     </Style>
+    <Style
+        x:Key="ListViewTypes"
+        TargetType="{x:Type ListViewItem}">
+        <Setter Property="Content" Value="{Binding Type}"/>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <TextBlock>
+                    <Run Text="{Binding Type, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Run Text="Created on:}"/>
+                    <Run Text="{Binding CreatedOn, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <LineBreak/>
+                </TextBlock>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style
+        x:Key="ListViewDates"
+        TargetType="{x:Type ListViewItem}">
+        <Setter Property="Content" Value="{Binding ModifiedOn}"/>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <TextBlock>
+                    <Run Text="{Binding Type, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Run Text="Created on:}"/>
+                    <Run Text="{Binding CreatedOn, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <LineBreak/>
+                </TextBlock>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <GridView
+        x:Key="ListViewItemsStyle"
+        AllowsColumnReorder="True">
+        <GridViewColumn Header="Name"
+            DisplayMemberBinding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+            Width="200"/>
+        <GridViewColumn Header="Type"
+            DisplayMemberBinding="{Binding Type, UpdateSourceTrigger=PropertyChanged}"
+            Width="800"/>
+        <GridViewColumn Header="ModifiedOn"
+            DisplayMemberBinding="{Binding ModifiedOn, UpdateSourceTrigger=PropertyChanged}"
+            Width="800"/>
+    </GridView>
 </ResourceDictionary>
