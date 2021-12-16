@@ -108,10 +108,10 @@
             </Grid.RowDefinitions>
 
             <ScrollViewer
-                Grid.Row="0"
-                Margin="40,43,10,52"
+                Grid.Row="1"
+                Margin="40,10,9.667,24.667"
                 VerticalScrollBarVisibility="Auto"
-                HorizontalScrollBarVisibility="Disabled" Grid.RowSpan="2">
+                HorizontalScrollBarVisibility="Disabled">
                 <StackPanel Height="120" Width="422">
                     <StackPanel.Resources>
                         <Style TargetType="{x:Type TextBlock}">
