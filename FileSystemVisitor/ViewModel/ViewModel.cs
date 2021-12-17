@@ -554,7 +554,6 @@ namespace FileSystemVisitor.ViewModel
 
                     foreach (var fileName in allLines)
                     {
-                        DoLog?.Invoke($"Found {fileName.Name}!", DateTime.UtcNow - timeStart);
                         var file = new FileDetailsModel();
                         file.Name = Path.GetFileName(fileName.FullName);
                         file.FileExtension = GetFileExtension(fileName.FullName);
@@ -567,6 +566,7 @@ namespace FileSystemVisitor.ViewModel
                         file.ModifiedOn = GetModifiedOn(file.Path);
                         NavigatedFolderFiles.Add(file);
                         Thread.Sleep(TimeSpan.FromSeconds(1.0));
+                        DoLog?.Invoke($"Found {fileName.Name}!", DateTime.UtcNow - timeStart);
                         OnPropertyChanged(nameof(NavigatedFolderFiles));
                     }
                     DoLog?.Invoke("Search completed!", DateTime.UtcNow - timeStart);
@@ -662,11 +662,12 @@ namespace FileSystemVisitor.ViewModel
 
         private void AddLogMessage(string message, TimeSpan timeSpan)
         {
+            var lolkekcheburek = timeSpan.TotalSeconds;
             App.Current.Dispatcher.Invoke((Action)delegate
             {
                 LogEntries.Add(new LogEntry
                 {
-                    Timestamp = timeSpan.TotalSeconds.ToString(),
+                    Timestamp = string.Concat(timeSpan.Seconds.ToString(), " seconds"),
                     Message = message
                 });
             });
