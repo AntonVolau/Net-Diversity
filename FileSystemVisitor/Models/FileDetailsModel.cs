@@ -24,7 +24,6 @@ namespace FileSystemVisitor.Models
         public bool IsSelected { get; set; }
         public bool IsPinned { get; set; }
         internal string _Type { get; set; }
-        public string DisplayedName => string.Concat(Name, "        " , Type, "        ", ModifiedOn);
         public string Type =>_Type = IsDirectory ? "Folder" : "File";
     }
 }

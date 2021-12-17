@@ -6,6 +6,55 @@
         <Setter Property="Width" Value="200"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="25"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox  Text="{TemplateBinding Text}">
+                        </TextBox>
+                        <Button Grid.Column="2"
+                                    Command="{Binding DataContext.SearchFilesByDate, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}"
+                                IsDefault="True"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!--<Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="Border"
+                            BorderThickness="4"
+                            BorderBrush="Gray">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="25"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Name="PlaceHolder"
+                                Padding="7,0"
+                                Text="Search"/>
+                            <Button Grid.Column="1"
+                                    Command="{Binding DataContext.SearchFilesCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Text"
+                                 Value="">
+                            <Setter TargetName="PlaceHolder" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>-->
     </Style>
 
     <Style x:Key="AddressBarBoxStyle"

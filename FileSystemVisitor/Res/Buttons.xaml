@@ -13,19 +13,16 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-
                         <Border
                             Name="bgBorder"
                             Grid.ColumnSpan="3"
                             BorderThickness="1"
                             Opacity=".2"
                             Visibility="Collapsed">
-                            
                         </Border>
                         <Path
                             Grid.Column="0"
                             Height="15">
-
                         </Path>
                         <Button
         Name="UnpinButton"

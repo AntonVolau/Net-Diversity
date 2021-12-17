@@ -18,8 +18,8 @@ namespace FileSystemVisitor.Commands
 
         public event EventHandler CanExecuteChanged
         {
-            add { }
-            remove { }
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
 
         public bool CanExecute(object parameter)
