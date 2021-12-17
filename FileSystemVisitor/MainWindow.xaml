@@ -175,7 +175,7 @@
                     Command="{Binding GoToParentDirectoryCommand}" Margin="13,0,10,0"/>
         </Grid>
         <!--Files Viewer-->
-        <ListView Name="phonesList" ItemsSource="{Binding NavigatedFolderFiles, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,10,0" Grid.Column="1" Grid.Row="1" >
+        <ListView Name="filesList" ItemsSource="{Binding NavigatedFolderFiles, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,10,0" Grid.Column="1" Grid.Row="1" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name}">Name</GridViewColumn>
@@ -186,9 +186,13 @@
             <ListView.Resources>
             </ListView.Resources>
             <b:Interaction.Triggers>
-                <b:EventTrigger EventName="SelectionChanged">
+                <b:EventTrigger EventName="PreviewMouseLeftButtonDown">
                     <b:InvokeCommandAction Command="{Binding GetFileListCommand}"
-                                           CommandParameter="{Binding SelectedItem, ElementName=phonesList}"/>
+                                           CommandParameter="{Binding SelectedItem, ElementName=filesList}"/>
+                </b:EventTrigger>
+                <b:EventTrigger EventName="PreviewMouseRightButtonDown">
+                    <b:InvokeCommandAction Command="{Binding ExcludeFileCommand}"
+                                           CommandParameter="{Binding SelectedItem, ElementName=filesList}"/>
                 </b:EventTrigger>
             </b:Interaction.Triggers>
         </ListView>

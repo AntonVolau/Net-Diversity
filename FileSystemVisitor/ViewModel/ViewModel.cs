@@ -40,6 +40,7 @@ namespace FileSystemVisitor.ViewModel
 
         public ObservableCollection<FileDetailsModel> FavouriteFolders { get; set; }
         public ObservableCollection<FileDetailsModel> NavigatedFolderFiles { get; set; }
+        public ObservableCollection<FileSystemInfo> ExcludedFiles { get; set; }
         public ObservableCollection<FileDetailsModel> ConnectedDevices { get; set; }
         public ObservableCollection<SubMenuItemDetails> HomeTabSubMenuCollection { get; set; }
         public ObservableCollection<SubMenuItemDetails> ViewHomeTabSubMenuCollection { get; set; }
@@ -252,6 +253,9 @@ namespace FileSystemVisitor.ViewModel
             CanGoBack = position != 0;
             OnPropertyChanged(nameof(CanGoBack));
             NavigatedFolderFiles.Clear();
+            OnPropertyChanged(nameof(NavigatedFolderFiles));
+            ExcludedFiles.Clear();
+            OnPropertyChanged(nameof(ExcludedFiles));
             tempFolderCollection = null;
 
             if (PathHistoryCollection != null && position > 0)
@@ -290,6 +294,7 @@ namespace FileSystemVisitor.ViewModel
             OnPropertyChanged(nameof(CurrentDirectory));
 
             NavigatedFolderFiles = new ObservableCollection<FileDetailsModel>();
+            ExcludedFiles = new ObservableCollection<FileSystemInfo>();
 
             bgGetFilesBackgroundWorker.DoWork += bgGetFilesBackgroundWorker_DoWork;
             bgGetFilesBackgroundWorker.ProgressChanged += bgGetFilesBackgroundWorker_ProgressChanged;
@@ -418,6 +423,39 @@ namespace FileSystemVisitor.ViewModel
                     }
                 }
             }));
+
+        protected ICommand _excludeFileCommand;
+        public ICommand ExcludeFileCommand =>
+            _excludeFileCommand ?? (_excludeFileCommand = new RelayCommand(parameter =>
+            {
+                var file = parameter as FileDetailsModel;
+                if (file == null) return;
+
+                DirectoryInfo info = new DirectoryInfo(CurrentDirectory);
+                var allFiles = info.GetDirectories().Cast<FileSystemInfo>().Concat(info.GetFiles()).ToList();
+                var filesToExclude = info.GetDirectories()
+                .Where(p => p.Name == file.Name)
+                .Cast<FileSystemInfo>()
+                .Concat(info.GetFiles()
+                .Where(p => p.Name == file.Name))
+                .ToList();
+                if (filesToExclude.Count < 1)
+                {
+                    return;
+                }
+                var TempArray = new FileDetailsModel[NavigatedFolderFiles.Count];
+                NavigatedFolderFiles.CopyTo(TempArray, 0);
+
+                foreach (var nenuzhniFile in TempArray)
+                {
+                    if (nenuzhniFile.Name == filesToExclude[0].Name)
+                    {
+                        NavigatedFolderFiles.Remove(nenuzhniFile);
+                    }
+                }
+                DoLog?.Invoke($"Excluded {file.Name}!", TimeSpan.Zero);
+            }));
+
 
         public ICommand _goToPrevousDirectoryCommand;
 
