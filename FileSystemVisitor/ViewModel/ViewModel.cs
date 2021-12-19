@@ -25,7 +25,7 @@ namespace FileSystemVisitor.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         public delegate void Log(string message, TimeSpan timeSpan);
         public static event Log DoLog;
-        
+
         // readonly ResourceDictionary _iconDictionary = Application.LoadComponent(new Uri("/FileSystemVisitor", UriKind.RelativeOrAbsolute)) as ResourceDictionary;
 
         public string CurrentDirectory { get; set; }
@@ -268,6 +268,12 @@ namespace FileSystemVisitor.ViewModel
                 bgGetFilesBackgroundWorker.CancelAsync();
 
             bgGetFilesBackgroundWorker.RunWorkerAsync(fileDetailModel);
+            DirectoryInfo info = new DirectoryInfo(CurrentDirectory);
+            var allFiles = info.GetDirectories().Cast<FileSystemInfo>().Concat(info.GetFiles()).ToList();
+            foreach (var file in allFiles)
+            {
+                DoLog?.Invoke($"found {file.Name}!", TimeSpan.Zero);
+            }
         }
 
         public ViewModel()
@@ -660,17 +666,25 @@ namespace FileSystemVisitor.ViewModel
                     bgGetFilesBackgroundWorker.Dispose();
             }));
 
-        private void AddLogMessage(string message, TimeSpan timeSpan)
-        {
-            var lolkekcheburek = timeSpan.TotalSeconds;
-            App.Current.Dispatcher.Invoke((Action)delegate
-            {
-                LogEntries.Add(new LogEntry
+        private ICommand _clearLogs;
+
+        public ICommand ClearLogs => _clearLogs ??
+            (_clearLogs = new Command(() =>
                 {
-                    Timestamp = string.Concat(timeSpan.Seconds.ToString(), " seconds"),
-                    Message = message
-                });
+                    LogEntries.Clear();
+                }));
+
+    private void AddLogMessage(string message, TimeSpan timeSpan)
+    {
+        var lolkekcheburek = timeSpan.TotalSeconds;
+        App.Current.Dispatcher.Invoke((Action)delegate
+        {
+            LogEntries.Add(new LogEntry
+            {
+                Timestamp = string.Concat(timeSpan.Seconds.ToString(), " seconds"),
+                Message = message
             });
-        }
+        });
     }
+}
 }
