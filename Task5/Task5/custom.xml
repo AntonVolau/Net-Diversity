@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<File>
+  <SomeInt>666</SomeInt>
+  <SomeTimespan>00:01:09</SomeTimespan>
+  <SomeString>Nice task, I love it!</SomeString>
+  <SomeFloat>1234</SomeFloat>
+</File>
