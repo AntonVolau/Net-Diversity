@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net5.0\TestInputs\00.txt" />
+    <Content Include="bin\Debug\net5.0\TestInputs\000000000.txt" />
+    <Content Include="bin\Debug\net5.0\TestInputs\111111111.txt" />
+    <Content Include="bin\Debug\net5.0\TestInputs\123456789.txt" />
+    <Content Include="bin\Debug\net5.0\TestInputs\222222222.txt" />
+    <Content Include="bin\Debug\net5.0\TestInputs\333333333.txt" />
+    <Content Include="bin\Debug\net5.0\TestInputs\444444444.txt" />
+    <Content Include="bin\Debug\net5.0\TestInputs\555555555.txt" />
+    <Content Include="bin\Debug\net5.0\TestInputs\666666666.txt" />
+    <Content Include="bin\Debug\net5.0\TestInputs\777777777.txt" />
+    <Content Include="bin\Debug\net5.0\TestInputs\888888888.txt" />
+    <Content Include="bin\Debug\net5.0\TestInputs\999999999.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.3" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.3" />
+    <PackageReference Include="coverlet.collector" Version="3.0.2" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bank\Bank.csproj" />
+  </ItemGroup>
+
+</Project>
