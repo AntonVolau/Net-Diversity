@@ -62,7 +62,7 @@
     <Build Include="Address.sql" />
     <Build Include="Employee.sql" />
     <Build Include="Company.sql" />
-    <None Include="Script.postdeploy.sql" />
+    <PostDeploy Include="Script.postdeploy.sql" />
     <Build Include="EmployeeInfo View.sql" />
     <None Include="Stored Procedure.sql" />
     <None Include="Trigger on Insert.sql" />
