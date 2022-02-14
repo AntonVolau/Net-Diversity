@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET Diversity WPF Framework
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net Diversity Library Framework", "Net Diversity Library Framework\Net Diversity Library Framework.csproj", "{6A3AF026-22B8-4E58-9EB8-8CACF01DC761}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrainstormSessions", "BrainstormSessions\BrainstormSessions.csproj", "{1108517B-E2C3-4D9A-BA63-578D13447EC4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrainstormSessions.Test", "BrainstormSessions.Test\BrainstormSessions.Test.csproj", "{C12DF814-57A3-4F22-90B9-F62AF47BDD2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{6A3AF026-22B8-4E58-9EB8-8CACF01DC761}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A3AF026-22B8-4E58-9EB8-8CACF01DC761}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A3AF026-22B8-4E58-9EB8-8CACF01DC761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1108517B-E2C3-4D9A-BA63-578D13447EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1108517B-E2C3-4D9A-BA63-578D13447EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1108517B-E2C3-4D9A-BA63-578D13447EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1108517B-E2C3-4D9A-BA63-578D13447EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C12DF814-57A3-4F22-90B9-F62AF47BDD2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C12DF814-57A3-4F22-90B9-F62AF47BDD2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C12DF814-57A3-4F22-90B9-F62AF47BDD2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C12DF814-57A3-4F22-90B9-F62AF47BDD2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
